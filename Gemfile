@@ -50,3 +50,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rswag-specs'
 end
+
+gem 'valid_email'
