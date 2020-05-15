@@ -2,7 +2,7 @@
 
 require 'swagger_helper'
 
-describe 'api/v1/tags', type: :request do
+describe 'api/tags', type: :request do
 
     before(:each) {
         @tag = Tag.create(
@@ -10,7 +10,7 @@ describe 'api/v1/tags', type: :request do
         )
     }
 
-  path '/api/v1/tags/{id}' do
+  path '/api/tags/{id}' do
     get 'Get Tag' do
       tags 'Tag'
       consumes 'application/json'
@@ -30,10 +30,7 @@ describe 'api/v1/tags', type: :request do
         
         run_test!
       end
-
     end
   end
-
-
 
 end

@@ -52,3 +52,9 @@ group :development, :test do
 end
 
 gem 'valid_email'
+
+
+gem 'grape', '>= 0.10.0'
+
+gem 'will_paginate'
+gem 'api-pagination'

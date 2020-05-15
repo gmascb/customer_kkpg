@@ -1,6 +1,8 @@
+# rake rswag:specs:swaggerize
+
 require 'swagger_helper'
 
-describe 'api/v1/forms', type: :request do
+describe 'api/forms', type: :request do
 
     before(:each) {
         tag = Tag.create(
@@ -13,7 +15,7 @@ describe 'api/v1/forms', type: :request do
         )
     }
 
-    path '/api/v1/forms/{id}' do
+    path '/api/forms/{id}' do
         get 'Get Form' do
           tags 'Form'
           consumes 'application/json'
@@ -41,9 +43,6 @@ describe 'api/v1/forms', type: :request do
     
         end
       end
-
-
-
 
 end
 
