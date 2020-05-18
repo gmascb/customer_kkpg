@@ -1,6 +1,6 @@
 class Form < ApplicationRecord
 
-    validates :name, uniqueness: true
+    validates :name, :presence => true, uniqueness: true
     belongs_to :tag
 
 end
