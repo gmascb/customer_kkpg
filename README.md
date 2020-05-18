@@ -1,24 +1,35 @@
-# README
+## Ruby version
+  * 2.5.7
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Configuration
+  * bundle install
+  
+## Database creation
+  * postgresql
+  * rake db:create
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## How to run the test suite
+Tests all
+```
+(...)$: rspec
+.......................
+Finished in 0.33206 seconds (files took 2.46 seconds to load)
+23 examples, 0 failures
+```
+Test Models
+```
+rspec spec/models
+...........
+Finished in 0.12062 seconds (files took 2.32 seconds to load)
+11 examples, 0 failures
+```
+Test API
+```
+rspec spec/requests
+............
+Finished in 0.29916 seconds (files took 2.14 seconds to load)
+12 examples, 0 failures
+```
+* Production on Heroku - Swagger
+  * [Link to Production](http://customer-kkpg.herokuapp.com/api-docs/index.html)
+  
