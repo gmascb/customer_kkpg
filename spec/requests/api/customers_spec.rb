@@ -104,4 +104,37 @@ describe 'api/customers', type: :request do
 
     end
   end
+
+  path '/api/customers' do
+    get 'Get Customers' do
+      tags 'Customer'
+      consumes 'application/json'
+
+      parameter name: "page", :in => :query, :type => :integer
+
+      response '200', 'Customers Found' do
+        schema type: :object,
+               properties: {
+               type: :array,
+               items: {
+                 type: :object,
+                 properties: {
+                    id: {type: :integer},
+                    name: {type: :string},
+                    email: {type: :string},
+                    type: :object,
+                    form: {
+                        id: {type: :integer},
+                        name: {type: :string}
+                    },
+                    created_at: {type: :string}
+                  }
+                }
+              }
+        let(:page) { 1 }
+        run_test!
+      end
+
+    end
+  end
 end

@@ -4,9 +4,8 @@ module Api
 
     # GET /customers
     def index
-      @customers = Customer.all
-
-      paginate json: @customers
+      @customers = Customer.page(params[:page] ? params[:page].to_i : 1)
+      render json: { objects:@customers, meta: pagination_meta(@customers) }
     end
 
     # GET /customers/1

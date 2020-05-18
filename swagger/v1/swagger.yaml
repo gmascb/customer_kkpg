@@ -84,6 +84,40 @@ paths:
             required:
             - name
             - email
+    get:
+      summary: Get Customers
+      tags:
+      - Customer
+      consumes:
+      - application/json
+      parameters:
+      - name: page
+        in: query
+        type: integer
+      responses:
+        '200':
+          description: Customers Found
+          schema:
+            type: object
+            properties:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  email:
+                    type: string
+                  type: object
+                  form:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                  created_at:
+                    type: string
   "/api/forms/{id}":
     get:
       summary: Get Form

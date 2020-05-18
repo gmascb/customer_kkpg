@@ -54,7 +54,8 @@ end
 gem 'valid_email'
 
 
-gem 'grape', '>= 0.10.0'
-
-gem 'will_paginate'
+gem 'kaminari'
+# gem 'pager_api'
+gem 'active_model_serializers'
+gem 'pagy'
 gem 'api-pagination'

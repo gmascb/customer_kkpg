@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Tag.find_or_create_by(
+    name: "tag_seed"
+)
+
+Form.find_or_create_by(
+    name: "form_seed",
+    tag: Tag.first
+)
+
+Customer.find_or_create_by(
+    name: "customer_seed",
+    email: "email@seed.com",
+    form: Form.first
+)
+
