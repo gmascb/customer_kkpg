@@ -36,6 +36,20 @@ paths:
                   type: string
               created_at:
                 type: string
+    delete:
+      summary: Delete Customer
+      tags:
+      - Customer
+      consumes:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      responses:
+        '204':
+          description: Customers Deleted
   "/api/customers":
     post:
       summary: Create Customer

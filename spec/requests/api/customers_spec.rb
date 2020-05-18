@@ -20,6 +20,13 @@ describe 'api/customers', type: :request do
         email: "email@mail.com",
         form: @form
     )
+
+    @customer_to_delete = Customer.create(
+        name: "teste",
+        email: "email@mail.com",
+        form: @form
+    )
+
   }
 
   path '/api/customers/{id}' do
@@ -50,7 +57,6 @@ describe 'api/customers', type: :request do
 
     end
   end
-
 
   path '/api/customers' do
     post 'Create Customer' do
@@ -151,4 +157,22 @@ describe 'api/customers', type: :request do
 
     end
   end
+
+  path '/api/customers/{id}' do
+    delete 'Delete Customer' do
+      tags 'Customer'
+      consumes 'application/json'
+
+      parameter name: 'id', :in => :path, :type => :integer, required: true
+
+      response '204', 'Customers Deleted' do
+
+        let(:id) { @customer_to_delete.id }
+
+        run_test!
+      end
+
+    end
+  end
+
 end
