@@ -22,3 +22,14 @@ Customer.find_or_create_by(
     form: Form.first
 )
 
+count = 0
+loop do
+  count += 1
+  Customer.find_or_create_by(
+      name: "customer_seed",
+      email: "email#{count}@seed.com",
+      form: Form.first
+  )
+  break if count > 30
+end
+

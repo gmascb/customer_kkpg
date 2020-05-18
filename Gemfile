@@ -49,13 +49,13 @@ gem 'rswag-ui'
 group :development, :test do
   gem 'rspec-rails'
   gem 'rswag-specs'
+  gem 'shoulda-matchers'
 end
 
 gem 'valid_email'
 
 
 gem 'kaminari'
-# gem 'pager_api'
 gem 'active_model_serializers'
 gem 'pagy'
 gem 'api-pagination'

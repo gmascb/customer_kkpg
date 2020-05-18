@@ -115,23 +115,37 @@ describe 'api/customers', type: :request do
       response '200', 'Customers Found' do
         schema type: :object,
                properties: {
-               type: :array,
-               items: {
-                 type: :object,
-                 properties: {
-                    id: {type: :integer},
-                    name: {type: :string},
-                    email: {type: :string},
-                    type: :object,
-                    form: {
-                        id: {type: :integer},
-                        name: {type: :string}
-                    },
-                    created_at: {type: :string}
-                  }
-                }
-              }
+                   customer: {
+                       type: :array,
+                       items: {
+                           type: :object,
+                           properties: {
+                               id: {type: :integer},
+                               name: {type: :string},
+                               email: {type: :string},
+                               type: :object,
+                               form: {
+                                   id: {type: :integer},
+                                   name: {type: :string}
+                               },
+                               created_at: {type: :string}
+                           }
+                       }
+                   },
+                   type: :object,
+                   properties: {
+                       pages: {
+                           current_page: {type: :integer},
+                           next_page: {type: :integer, "x-nullable": true},
+                           previous_page: {type: :integer, "x-nullable": true},
+                           total_pages: {type: :integer},
+                           total_count: {type: :integer}
+                       }
+                   },
+               }
+
         let(:page) { 1 }
+
         run_test!
       end
 
