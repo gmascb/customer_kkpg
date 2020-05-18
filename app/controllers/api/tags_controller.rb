@@ -6,7 +6,7 @@ module Api
     def index
       @tags = Tag.all
 
-      render json: @tags
+      render json: { tag: @tags }
     end
 
     # GET /tags/1

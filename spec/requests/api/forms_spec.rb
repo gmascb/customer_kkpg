@@ -126,7 +126,7 @@ describe 'api/forms', type: :request do
 
       response '204', 'Form Deleted' do
 
-        let(:id) { @form_to_delete.id }
+        let(:id) { Form.last.id }
 
         run_test!
       end

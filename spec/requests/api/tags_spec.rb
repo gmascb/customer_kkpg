@@ -45,8 +45,13 @@ describe 'api/tags', type: :request do
       response '200', 'Tags Found' do
         schema type: :object,
                properties: {
-                   id: {type: :integer},
-                   name: {type: :string}
+                   tag: {
+                       type: :array,
+                       items: {
+                           id: {type: :integer},
+                           name: {type: :string}
+                       }
+                   }
                }
 
         run_test!
@@ -95,7 +100,7 @@ describe 'api/tags', type: :request do
 
       response '204', 'Tag Deleted' do
 
-        let(:id) { @tag_delete.id }
+        let(:id) { Tag.last.id }
 
         run_test!
       end

@@ -167,7 +167,7 @@ describe 'api/customers', type: :request do
 
       response '204', 'Customers Deleted' do
 
-        let(:id) { @customer_to_delete.id }
+        let(:id) { Customer.last.id }
 
         run_test!
       end
