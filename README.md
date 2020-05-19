@@ -1,5 +1,5 @@
 ## Ruby version
-  * 2.5.7
+  * 2.5.8
 
 ## Configuration
   * bundle install
@@ -7,6 +7,8 @@
 ## Database creation
   * postgresql
   * rake db:create
+  * rake db:migrate
+  * rake db:seed
 
 ## How to run the test suite
 Tests all
@@ -35,7 +37,7 @@ Finished in 0.29916 seconds (files took 2.14 seconds to load)
   
 ## Docker
   * [HOW-TO Install Video](https://www.youtube.com/watch?v=vn27fUbOLbg)
-  * [Docker-Hub Doc - Compose Rails](https://docs.docker.com/compose/rails/)
+  * [Docs-Docker - Compose Rails](https://docs.docker.com/compose/rails/)
   * To run with docker needs to modify database.yml file to
 ```
 default: &default
@@ -53,6 +55,8 @@ $: docker-compose build
 $: docker-compose run web rake db:create
 
 $: docker-compose run web rake db:migrate
+
+$: docker-compose run web rake db:seed
 ```
   * To run the application
 ```
@@ -61,7 +65,7 @@ docker-compose up
 
   * You can see logs from docker-compose
 ```
-Guilhermes-MacBook-Pro:tmp guilhermebarbosa$ docker-compose up
+Guilhermes-MacBook-Pro:customer_kkpg guilhermebarbosa$ docker-compose up
 Starting customer_kkpg_db_1 ... done
 Starting customer_kkpg_web_1 ... done
 Attaching to customer_kkpg_db_1, customer_kkpg_web_1
