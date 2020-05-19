@@ -39,4 +39,5 @@ ActiveRecord::Schema.define(version: 2020_05_15_000351) do
   end
 
   add_foreign_key "customers", "forms"
+  add_foreign_key "forms", "tags"
 end
